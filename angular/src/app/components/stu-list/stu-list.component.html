@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>  
+  <body>
+
+ 
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <td><button type="button" class="btn btn-md btn-info" (click) = "addStu()">Add Student</button></td>
+ 
+            <div class="row">
+              <table class='table table-bordered'>
+                <thead>
+                    <tr class='table-dark'>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Fees</th>
+			            <th>Course_id</th>
+                        <th>Action</th>
+                    </tr>
+            
+                </thead>
+                
+                <tr *ngFor="let tempStu of students">
+                    <td>{{tempStu.id}}</td>
+                    <td>{{tempStu.sname}}</td>
+                    <td>{{tempStu.address}}</td>
+		            <td>{{tempStu.fees}}</td>
+                    <td>{{tempStu.course_id}}</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-md btn-info" (click) = "updateStu(tempStu.id)">Update</button>
+                        &nbsp; &nbsp;
+                        <button type="button" class="btn btn-md btn-danger" (click) = "deleteStu(tempStu.id)">Delete </button>
+
+                    </td>
+
+                </tr>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
